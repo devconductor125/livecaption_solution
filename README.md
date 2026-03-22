@@ -60,7 +60,9 @@ Open Command Prompt as Administrator.
 
 Run the following command (replace the path with your actual file location):
 
+```bash
 dism /online /add-package /packagepath:"C:\path\to\Microsoft-Windows-LanguageFeatures-Speech-en-us.cab"
+```
 
 ---
 
