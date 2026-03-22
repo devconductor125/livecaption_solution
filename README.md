@@ -48,7 +48,9 @@ Wait for the process to complete.
 
 After the download finishes, find the following file inside the extracted folder:
 
+```bash
 Microsoft-Windows-LanguageFeatures-Speech-en-us.cab
+```
 
 This is the only file needed for Live Captions.
 
@@ -64,13 +66,20 @@ Run the following command (replace the path with your actual file location):
 dism /online /add-package /packagepath:"C:\path\to\Microsoft-Windows-LanguageFeatures-Speech-en-us.cab"
 ```
 
+Run the following command to get all capabilities 
+```bash
+dism /online /get-capabilities
+```
+
 ---
 
 ## Step 4 — Register the capability
 
 Run the following command:
 
+```bash
 dism /online /add-capability /capabilityname:Speech~~~en-US~0.0.1.0
+```
 
 If this step fails due to network issues, you can ignore the error because the files are already installed.
 
@@ -80,7 +89,9 @@ If this step fails due to network issues, you can ignore the error because the f
 
 If you see an error like "source files not found", run:
 
+```bash
 dism /online /add-capability /capabilityname:Speech~~~en-US~0.0.1.0 /source:C:\path\to\cab_folder /limitaccess
+```
 
 ---
 
